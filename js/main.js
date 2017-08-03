@@ -11,6 +11,9 @@ var lastTime;
 var deltaTime;
 
 var bgpic = new Image();
+
+var ane;
+
 document.body.onload =game;
 function game()
 {
@@ -33,6 +36,11 @@ function init()
 
   	canWidth = can1.width;
   	canHeight =can1.height;
+
+  	ane = new aneObj();
+  	ane.init();
+
+
 }
 
 function gameloop()
@@ -43,4 +51,5 @@ function gameloop()
 	lastTime =now;
 
 	drawBackground();
+	ane.draw();
 }
