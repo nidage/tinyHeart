@@ -13,6 +13,7 @@ var deltaTime;
 var bgpic = new Image();
 
 var ane;
+var fruit;
 
 document.body.onload =game;
 function game()
@@ -40,7 +41,8 @@ function init()
   	ane = new aneObj();
   	ane.init();
 
-
+  	fruit = new fruitObj();
+  	fruit.init();
 }
 
 function gameloop()
@@ -52,4 +54,6 @@ function gameloop()
 
 	drawBackground();
 	ane.draw();
+
+	fruit.draw();
 }
