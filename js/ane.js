@@ -13,8 +13,8 @@ aneObj.prototype.init =function()
 	}
 }
 aneObj.prototype.draw =function()
-{	ctx2.save();
-	console.log()
+{	
+	ctx2.save();
 	ctx2.globalAlpha = 0.6;
 	ctx2.lineWidth = 20;
 	ctx2.lineCap = "round";
@@ -27,5 +27,5 @@ aneObj.prototype.draw =function()
 		ctx2.lineTo(this.x[i],canHeight-this.len[i]);
 		ctx2.stroke();
 	}
-	ctx2.restroe();
+	
 }
