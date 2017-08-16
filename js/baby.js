@@ -5,9 +5,13 @@ var babyObj = function()
 	this.angle;
 	this.babyEye = new Image();
 	this.babyBody = new Image();
+<<<<<<< HEAD
 
 	this.babyTailTimer = 0;
 	this.babyTailCount = 0;
+=======
+	this.babyTail = new Image();
+>>>>>>> origin/master
 
 }
 babyObj.prototype.init = function()
@@ -17,6 +21,10 @@ babyObj.prototype.init = function()
 	this.angle = 0;
 	this.babyEye.src = "./src/babyEye0.png";
 	this.babyBody.src = "./src/babyFade0.png";
+<<<<<<< HEAD
+=======
+	this.babyTail.src = "./src/babyTail0.png";
+>>>>>>> origin/master
 }
 babyObj.prototype.draw = function()
 {	
@@ -30,6 +38,7 @@ babyObj.prototype.draw = function()
 	var beta = Math.atan2(deltaY,deltaX) + Math.PI//-PI PI
 
 	//lerp angle
+<<<<<<< HEAD
 	this.angle = lerpAngle(beta, this.angle, 0.6);
 
 	//baby tail count
@@ -39,14 +48,22 @@ babyObj.prototype.draw = function()
 		this.babyTailCount = (this.babyTailCount + 1) % 8;
 		this.babyTailTimer %= 50;
 	}
+=======
+
+	this.angle = lerpAngle(beta, this.angle, 0.6);
+>>>>>>> origin/master
 	//ctx1
 	ctx1.save();
 	//translate;
 	ctx1.translate(this.x, this.y);
 	ctx1.rotate(this.angle);
+<<<<<<< HEAD
 
 	var babyTailCount = this.babyTailCount;
 	ctx1.drawImage(babyTail[babyTailCount], -babyTail[babyTailCount].width * 0.5 + 23, -babyTail[babyTailCount].height * 0.5);
+=======
+	ctx1.drawImage(this.babyTail, -this.babyTail.width * 0.5 + 23, -this.babyTail.height * 0.5);
+>>>>>>> origin/master
 	ctx1.drawImage(this.babyBody, -this.babyBody.width * 0.5, -this.babyBody.height * 0.5);
 	ctx1.drawImage(this.babyEye, -this.babyEye.width * 0.5, -this.babyEye.height * 0.5);
 	
