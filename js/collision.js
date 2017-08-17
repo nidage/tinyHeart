@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //判断大鱼和果实的距离
 function momFruitsCollision()
 {
@@ -17,7 +16,6 @@ function momFruitsCollision()
 	}
 }
 
-=======
 //判断大鱼和果实的距离
 function momFruitsCollision()
 {
@@ -36,4 +34,3 @@ function momFruitsCollision()
 	}
 }
 
->>>>>>> origin/master
