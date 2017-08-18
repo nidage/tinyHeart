@@ -23,7 +23,10 @@ var my;
 
 var babyTail = [];
 var babyEye = [];
+<<<<<<< HEAD
 var babyBody = [];
+=======
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 
 document.body.onload =game;
 function game()
@@ -63,6 +66,7 @@ function init()
 
   	mx = canWidth * 0.5;
   	my = canHeight * 0.5;
+<<<<<<< HEAD
 
   	for(var i = 0 ;i < 8; i++)
   	{
@@ -82,7 +86,20 @@ function init()
   	}
 
 }
+=======
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 
+  	for(var i = 0 ;i < 8; i++)
+  	{
+  		babyTail[i] = new Image();
+  		babyTail[i].src = "./src/bigTail" + i + ".png";
+  	}
+  	for(var i = 0;i < 2; i++)
+  	{
+  		babyEye[i] = new Image();
+  		babyEye[i].src = "./src/babyEye" + i + ".png";
+  	}
+}
 function gameloop()
 {
 	window.requestAnimFrame(gameloop);//setInterval,seTimeout()

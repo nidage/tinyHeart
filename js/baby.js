@@ -3,11 +3,11 @@ var babyObj = function()
 	this.x;
 	this.y;
 	this.angle;
-	this.babyEye = new Image();
 	this.babyBody = new Image();
 
 	this.babyTailTimer = 0;
 	this.babyTailCount = 0;
+<<<<<<< HEAD
 
 	this.babyEyeTimer = 0;
 	this.babyEyeCount = 0;
@@ -15,7 +15,13 @@ var babyObj = function()
 
 	this.babyBodyTimer = 0;
 	this.babyBodyCount = 0;
+=======
+	this.babyTail = new Image();
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 
+	this.babyEyeTimer = 0;
+	this.babyEyeCount = 0;
+	this.babyEyeInerval = 1000;
 }
 babyObj.prototype.init = function()
 {
@@ -23,6 +29,10 @@ babyObj.prototype.init = function()
 	this.y = canHeight * 0.5 + 50;
 	this.angle = 0;
 	this.babyBody.src = "./src/babyFade0.png";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 }
 babyObj.prototype.draw = function()
 {	
@@ -36,6 +46,7 @@ babyObj.prototype.draw = function()
 	var beta = Math.atan2(deltaY,deltaX) + Math.PI//-PI PI
 
 	//lerp angle
+<<<<<<< HEAD
 	this.angle = lerpAngle(beta, this.angle, 0.6);
 
 	//baby tail count
@@ -46,7 +57,32 @@ babyObj.prototype.draw = function()
 		this.babyTailTimer %= 50;
 	}
 
+=======
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 	this.angle = lerpAngle(beta, this.angle, 0.6);
+
+	//baby tail count
+	this.babyTailTimer += deltaTime;
+	if(this.babyTailTimer > 50)
+	{
+		this.babyTailCount = (this.babyTailCount + 1) % 8;
+		this.babyTailTimer %= 50;
+	}
+	//baby eye count
+	this.babyEyeTimer += deltaTime;
+	if(this.babyEyeTimer > this.babyEyeInerval)
+	{
+		this.babyEyeCount = (this.babyEyeCount + 1) % 2;
+		this.babyEyeTimer %= this.babyEyeInerval;
+
+		if(this.babyEyeCount == 0)
+		{
+			this.babyEyeInerval = Math.random() *1500 + 2000;//[1500,3500)
+		}else
+		{
+			this.babyEyeInerval = 200;
+		}
+	}
 	//ctx1
 	this.babyEyeTimer += deltaTime;
 	if(this.babyEyeTimer > this.babyEyeInterval)
@@ -81,8 +117,12 @@ babyObj.prototype.draw = function()
 
 	var babyTailCount = this.babyTailCount;
 	ctx1.drawImage(babyTail[babyTailCount], -babyTail[babyTailCount].width * 0.5 + 23, -babyTail[babyTailCount].height * 0.5);
+<<<<<<< HEAD
 	var babyBodyCount = this.babyBodyCount;
 	ctx1.drawImage(babyBody[babyBodyCount], -babyBody[babyBodyCount].width * 0.5, -babyBody[babyBodyCount].height * 0.5);
+=======
+	ctx1.drawImage(this.babyBody, -this.babyBody.width * 0.5, -this.babyBody.height * 0.5);
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 	var babyEyeCount = this.babyEyeCount;
 	ctx1.drawImage(babyEye[babyEyeCount], -babyEye[babyEyeCount].width * 0.5, -babyEye[babyEyeCount].height * 0.5);
 	

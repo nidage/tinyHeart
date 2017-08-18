@@ -33,10 +33,13 @@ function momFruitsCollision()
 		}
 	}
 }
+<<<<<<< HEAD
 //mom baby collision
 function momBabyCollision()
 {
 	var l = calLength2(mom.x, mom.y, baby.x, baby,y)
 
 }
+=======
+>>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 
