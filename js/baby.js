@@ -3,11 +3,9 @@ var babyObj = function()
 	this.x;
 	this.y;
 	this.angle;
-	this.babyBody = new Image();
 
 	this.babyTailTimer = 0;
 	this.babyTailCount = 0;
-<<<<<<< HEAD
 
 	this.babyEyeTimer = 0;
 	this.babyEyeCount = 0;
@@ -15,9 +13,7 @@ var babyObj = function()
 
 	this.babyBodyTimer = 0;
 	this.babyBodyCount = 0;
-=======
 	this.babyTail = new Image();
->>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 
 	this.babyEyeTimer = 0;
 	this.babyEyeCount = 0;
@@ -28,11 +24,6 @@ babyObj.prototype.init = function()
 	this.x = canWidth * 0.5 - 50;
 	this.y = canHeight * 0.5 + 50;
 	this.angle = 0;
-	this.babyBody.src = "./src/babyFade0.png";
-<<<<<<< HEAD
-=======
-
->>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 }
 babyObj.prototype.draw = function()
 {	
@@ -46,7 +37,6 @@ babyObj.prototype.draw = function()
 	var beta = Math.atan2(deltaY,deltaX) + Math.PI//-PI PI
 
 	//lerp angle
-<<<<<<< HEAD
 	this.angle = lerpAngle(beta, this.angle, 0.6);
 
 	//baby tail count
@@ -57,8 +47,7 @@ babyObj.prototype.draw = function()
 		this.babyTailTimer %= 50;
 	}
 
-=======
->>>>>>> 98dce14c16400305990b104941f013ead4446ff6
+
 	this.angle = lerpAngle(beta, this.angle, 0.6);
 
 	//baby tail count
@@ -108,6 +97,7 @@ babyObj.prototype.draw = function()
 		{
 			this.babyBodyCount = 19;
 			//game over
+			data.gameOver = true;
 		}
 	}
 	ctx1.save();
@@ -117,12 +107,8 @@ babyObj.prototype.draw = function()
 
 	var babyTailCount = this.babyTailCount;
 	ctx1.drawImage(babyTail[babyTailCount], -babyTail[babyTailCount].width * 0.5 + 23, -babyTail[babyTailCount].height * 0.5);
-<<<<<<< HEAD
 	var babyBodyCount = this.babyBodyCount;
 	ctx1.drawImage(babyBody[babyBodyCount], -babyBody[babyBodyCount].width * 0.5, -babyBody[babyBodyCount].height * 0.5);
-=======
-	ctx1.drawImage(this.babyBody, -this.babyBody.width * 0.5, -this.babyBody.height * 0.5);
->>>>>>> 98dce14c16400305990b104941f013ead4446ff6
 	var babyEyeCount = this.babyEyeCount;
 	ctx1.drawImage(babyEye[babyEyeCount], -babyEye[babyEyeCount].width * 0.5, -babyEye[babyEyeCount].height * 0.5);
 	
